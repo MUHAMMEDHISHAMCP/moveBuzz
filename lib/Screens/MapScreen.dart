@@ -454,7 +454,7 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
                                               SizedBox(height: 3,),
                                               Container(
                                                 alignment: Alignment.centerLeft,
-                                                child: Text("701 Treeside Ct,  Chesterfield, St Louis 63017",
+                                                child: Text("789 E Parkway, Apt A, Louisville, KY - 60319",
                                                   maxLines: 1,
                                                   overflow: TextOverflow.ellipsis,
                                                   softWrap: false,
