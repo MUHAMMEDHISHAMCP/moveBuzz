@@ -62,6 +62,7 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
       child: Stack(
         fit: StackFit.expand,
         children: [
+          ShowMapScreen(),
           Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -868,8 +869,8 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
           //   height: 28,
           // ),
           //Map
-          // googleMap(context),
-          ShowMapScreen(),
+           googleMap(context),
+          // ShowMapScreen(),
           Visibility(
               visible: pickup,
               child: pickupScreen()
