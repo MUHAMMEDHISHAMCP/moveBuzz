@@ -269,23 +269,18 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
             ],
           ),
           //Map pickupIcon
-          GestureDetector(
-          onTap: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ShowMapScreen(),));
-          },
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Visibility(
-                    visible: pickupIcon,
-                    child: Image.asset("assets/Icons/ic_location_pickup.png",scale: 4.5,),
-                  ),
-                ],
-              ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Visibility(
+                  visible: pickupIcon,
+                  child: Image.asset("assets/Icons/ic_location_pickup.png",scale: 4.5,),
+                ),
+              ],
             ),
           ),
         ],
@@ -300,6 +295,7 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
       child: Stack(
         fit: StackFit.expand,
         children: [
+          ShowMapScreen(),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
