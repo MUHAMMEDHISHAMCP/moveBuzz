@@ -562,23 +562,18 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
           ),
 
           //Map dropoffIcon
-          InkWell(
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ShowMapScreen(),));
-            },
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Visibility(
-                    visible: dropoffIcon,
-                    child: Image.asset("assets/Icons/ic_location_dropoff.png",scale: 4.5,),
-                  ),
-                ],
-              ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Visibility(
+                  visible: dropoffIcon,
+                  child: Image.asset("assets/Icons/ic_location_dropoff.png",scale: 4.5,),
+                ),
+              ],
             ),
           ),
         ],
@@ -588,258 +583,264 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
 
   //Get Started
    Widget getStarted(){
-    return  Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          //Top Widgets
-          Container(
-            child: Column(
-              children: <Widget>[
-                // AppBar
-                Container(
-                  height: 55,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      //back bt
-                      Positioned(
-                        top: 0,
-                        bottom: 0,
-                        left: 11,
-                        child: InkWell(
-                          onTap: (){
-                          //  Navigator.pop(context);
-                            setState(() {
-                              dropoff=true;
-                              getStart=false;
-                            });
-                          },
-                          splashColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          child: Container(
-                            padding: const EdgeInsets.all(10.0),
-                            child: new Image.asset("assets/Icons/ic_back.png",width: 22,),
-                          ),
-                        ),
+    return  Stack(
+      children: [
+        ShowMapScreen(),
+        Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              //Top Widgets
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    // AppBar
+                    Container(
+                      height: 55,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
                       ),
-                      //Center Widget
-                      Positioned(
-                        top: 0,
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text("Get Started",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 14,
-                                fontFamily: 'narrowmedium',
-                            ),),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                //    Location Indicator
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
-                  child: Card(
-                      elevation: 5,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4)
-                      ),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        height: 100,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Container(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset("assets/Icons/ic_circle.png",
-                                    color: Colors.pink,height: 15,),
-                                  Container(
-                                    height: 35,
-                                    width: 1,
-                                    margin: EdgeInsets.only(top:2,bottom: 3),
-                                    decoration: BoxDecoration(
-                                        color: Colors.pink,
-                                        borderRadius: BorderRadius.circular(5)
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 13,
-                                    height: 13,
-                                    decoration: BoxDecoration(
-                                        color: Colors.pink,
-                                        shape: BoxShape.circle
-                                    ),
-                                  )
-                                ],
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                         
+                          //back bt
+                          Positioned(
+                            top: 0,
+                            bottom: 0,
+                            left: 11,
+                            child: InkWell(
+                              onTap: (){
+                              //  Navigator.pop(context);
+                                setState(() {
+                                  dropoff=true;
+                                  getStart=false;
+                                });
+                              },
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              child: Container(
+                                padding: const EdgeInsets.all(10.0),
+                                child: new Image.asset("assets/Icons/ic_back.png",width: 22,),
                               ),
                             ),
-                            SizedBox(width: 10,),
-                            Expanded(
-                              child: Container(
-                                padding: EdgeInsets.only(top: 8),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.only(left: 4,bottom: 5),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: <Widget>[
-                                          Container(
-                                            alignment: Alignment.centerLeft,
-                                            child: Text(fromAdress ?? "sdjhkl",
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              softWrap: false,
-                                              style: TextStyle(
-                                                color: Color(0xFF787878),
-                                                fontSize: 12,
-                                                fontFamily: 'narrowmedium',
-                                              ),),
-                                          ),
-                                          SizedBox(height: 3,),
-                                          Container(
-                                            alignment: Alignment.centerLeft,
-                                            // child: Text("W Canal Rd, Faisalabad, Punjab, Pakistan",
-                                            child: Text("701 Treeside Ct,  Chesterfield, St Louis 63017",
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              softWrap: false,
-                                              style: TextStyle(
-                                                color: Color(0xFFC2C2C2),
-                                                fontSize: 12,
-                                                fontFamily: 'narrowmedium',
-                                              ),),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Divider(height: 1, color: Color(0x80C2C2C2),thickness: 1,),
-                                    Container(
-                                      height: 35,
-                                      child: Column(
-                                        children: [
-                                           Container(
-                                            alignment: Alignment.centerLeft,
-                                            child: Text(toAdress ?? "sdjhkl",
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              softWrap: false,
-                                              style: TextStyle(
-                                                color: Color(0xFF787878),
-                                                fontSize: 12,
-                                                fontFamily: 'narrowmedium',
-                                              ),),
-                                          ),
-                                          SizedBox(height: 3,),
-                                          Container(
-                                            alignment: Alignment.centerLeft,
-                                            // child: Text("W Canal Rd, Faisalabad, Punjab, Pakistan",
-                                            child: Text("789 E Parkway, Apt A, Louisville, KY - 60319",
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              softWrap: false,
-                                              style: TextStyle(
-                                                color: Color(0xFFC2C2C2),
-                                                fontSize: 12,
-                                                fontFamily: 'narrowmedium',
-                                              ),),
-                                          ),
-                                          // Stack(
-                                          //   children: [
-                                          //     Container(
-                                          //       padding: EdgeInsets.only(right: 23),
-                                          //       child: TextFormField(
-                                          //         cursorColor: Colors.pink,
-                                          //         decoration: InputDecoration(
-                                          //           contentPadding: EdgeInsets.only(bottom:15,left: 4),
-                                          //           border: InputBorder.none,
-                                          //           hintText: toAdressController.text ?? "Add dropoff Location",
-                                          //           hintStyle: TextStyle(
-                                          //             color:  Color(0xFF787878),
-                                          //             fontSize: 12,
-                                          //             fontFamily: 'narrowmedium',
-                                          //           ),
-                                          //         ),
-                                          //       ),
-                                          //     ),
-                                          //     Positioned(
-                                          //       bottom: 8,
-                                          //       right: 0,
-                                          //       child: InkWell(
-                                          //         onTap: (){
-                                          //         },
-                                          //         splashColor: Colors.transparent,
-                                          //         highlightColor: Colors.transparent,
-                                          //         child: Image.asset("assets/Icons/ic_search.png",scale: 4.3,),
-                                          //       ),
-                                          //     )
-                                          //   ],
-                                          // ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-
-          //Confirm Started button
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-            child: Row(
-              children: [
-                Expanded(
-                  child: MaterialButton(
-                      height: 48,
-                      elevation: 0,
-                      highlightElevation: 0,
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      color: Colors.pink,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(2.0)
+                          ),
+                          //Center Widget
+                          Positioned(
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text("Get Started",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontFamily: 'narrowmedium',
+                                ),),
+                            ),
+                          ),
+                        ],
                       ),
-                      onPressed: (){
-                        FocusScope.of(context).requestFocus(FocusNode());
-                        Navigator.of(context).push(_DeliveryDetailsScreenRoute());
-                      },
-                      child:Text("Started",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13,
-                            fontFamily: 'narrowmedium'
-                        ),)
-                  ),
+                    ),
+                    //    Location Indicator
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
+                      child: Card(
+                          elevation: 5,
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4)
+                          ),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            height: 100,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset("assets/Icons/ic_circle.png",
+                                        color: Colors.pink,height: 15,),
+                                      Container(
+                                        height: 35,
+                                        width: 1,
+                                        margin: EdgeInsets.only(top:2,bottom: 3),
+                                        decoration: BoxDecoration(
+                                            color: Colors.pink,
+                                            borderRadius: BorderRadius.circular(5)
+                                        ),
+                                      ),
+                                      Container(
+                                        width: 13,
+                                        height: 13,
+                                        decoration: BoxDecoration(
+                                            color: Colors.pink,
+                                            shape: BoxShape.circle
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(width: 10,),
+                                Expanded(
+                                  child: Container(
+                                    padding: EdgeInsets.only(top: 8),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.only(left: 4,bottom: 5),
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: <Widget>[
+                                              Container(
+                                                alignment: Alignment.centerLeft,
+                                                child: Text(fromAdress ?? "sdjhkl",
+                                                  maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  softWrap: false,
+                                                  style: TextStyle(
+                                                    color: Color(0xFF787878),
+                                                    fontSize: 12,
+                                                    fontFamily: 'narrowmedium',
+                                                  ),),
+                                              ),
+                                              SizedBox(height: 3,),
+                                              Container(
+                                                alignment: Alignment.centerLeft,
+                                                // child: Text("W Canal Rd, Faisalabad, Punjab, Pakistan",
+                                                child: Text("701 Treeside Ct,  Chesterfield, St Louis 63017",
+                                                  maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  softWrap: false,
+                                                  style: TextStyle(
+                                                    color: Color(0xFFC2C2C2),
+                                                    fontSize: 12,
+                                                    fontFamily: 'narrowmedium',
+                                                  ),),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Divider(height: 1, color: Color(0x80C2C2C2),thickness: 1,),
+                                        Container(
+                                          height: 35,
+                                          child: Column(
+                                            children: [
+                                               Container(
+                                                alignment: Alignment.centerLeft,
+                                                child: Text(toAdress ?? "sdjhkl",
+                                                  maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  softWrap: false,
+                                                  style: TextStyle(
+                                                    color: Color(0xFF787878),
+                                                    fontSize: 12,
+                                                    fontFamily: 'narrowmedium',
+                                                  ),),
+                                              ),
+                                              SizedBox(height: 3,),
+                                              Container(
+                                                alignment: Alignment.centerLeft,
+                                                // child: Text("W Canal Rd, Faisalabad, Punjab, Pakistan",
+                                                child: Text("789 E Parkway, Apt A, Louisville, KY - 60319",
+                                                  maxLines: 1,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  softWrap: false,
+                                                  style: TextStyle(
+                                                    color: Color(0xFFC2C2C2),
+                                                    fontSize: 12,
+                                                    fontFamily: 'narrowmedium',
+                                                  ),),
+                                              ),
+                                              // Stack(
+                                              //   children: [
+                                              //     Container(
+                                              //       padding: EdgeInsets.only(right: 23),
+                                              //       child: TextFormField(
+                                              //         cursorColor: Colors.pink,
+                                              //         decoration: InputDecoration(
+                                              //           contentPadding: EdgeInsets.only(bottom:15,left: 4),
+                                              //           border: InputBorder.none,
+                                              //           hintText: toAdressController.text ?? "Add dropoff Location",
+                                              //           hintStyle: TextStyle(
+                                              //             color:  Color(0xFF787878),
+                                              //             fontSize: 12,
+                                              //             fontFamily: 'narrowmedium',
+                                              //           ),
+                                              //         ),
+                                              //       ),
+                                              //     ),
+                                              //     Positioned(
+                                              //       bottom: 8,
+                                              //       right: 0,
+                                              //       child: InkWell(
+                                              //         onTap: (){
+                                              //         },
+                                              //         splashColor: Colors.transparent,
+                                              //         highlightColor: Colors.transparent,
+                                              //         child: Image.asset("assets/Icons/ic_search.png",scale: 4.3,),
+                                              //       ),
+                                              //     )
+                                              //   ],
+                                              // ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+
+
+              //Confirm Started button
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: MaterialButton(
+                          height: 48,
+                          elevation: 0,
+                          highlightElevation: 0,
+                          splashColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          color: Colors.pink,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(2.0)
+                          ),
+                          onPressed: (){
+                            FocusScope.of(context).requestFocus(FocusNode());
+                            Navigator.of(context).push(_DeliveryDetailsScreenRoute());
+                          },
+                          child:Text("Started",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                                fontFamily: 'narrowmedium'
+                            ),)
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
    }
   String value;
@@ -865,8 +866,7 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
           //   height: 28,
           // ),
           //Map
-           googleMap(context),
-          // ShowMapScreen(),
+          googleMap(context),
           Visibility(
               visible: pickup,
               child: pickupScreen()
