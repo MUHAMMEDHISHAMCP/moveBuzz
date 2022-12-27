@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(top: 25,bottom: 40,right: 20,left: 20),
             child: Container(
               child: Text(
-                "Parcel is an on demand parcel\ndelivery service.",
+                "Parcel is an on demand parcel\nMoveBuzz service.",
                 style: TextStyle(
                   color: Color(0xFF787878),
                   fontSize: 17,

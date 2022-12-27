@@ -21,41 +21,34 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  image_picker:
+  cupertino_icons: ^0.1.3
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.3
+  flutter_login_facebook: ^0.3.0
   flutter_statusbarcolor: ^0.2.3
   flutter_svg: ^0.19.1
-  google_sign_in:
-  flutter_login_facebook: ^0.3.0
-  http: ^0.12.2
-  # country_code_picker: ^1.6.0
   google_maps_flutter: ^0.5.32
-  # location: ^3.0.2
-  intl:
-  url_launcher: ^5.7.6
-  provider:
+  google_sign_in: null
+  http: ^0.12.2
+  image_picker: null
+  intl: null
+  location: ^3.0.2
+  provider: null
   shared_preferences: ^2.0.15
+  url_launcher: ^5.7.6
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.8.0"
   flutter_test:
     sdk: flutter
 
-  flutter_launcher_icons: "^0.8.0"
-
 flutter_icons:
-    android: "launcher_icon"
-    ios: true
-    image_path: "assets/Icons/ic_app.png"
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/Icons/ic_app.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
 
@@ -66,44 +59,41 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/Icons/
-     - assets/svgIcons/
+    - assets/Icons/
+    - assets/svgIcons/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: narrowblack
-       fonts:
-         - asset: assets/fonts/clan_ot_narrowblack.otf
-     - family: narrowbold
-       fonts:
-         - asset: assets/fonts/clan_ot_narrowbold.otf
-     - family: narrowbook
-       fonts:
-         - asset: assets/fonts/clan_ot_narrowbook.otf
-     - family: narrowmedium
-       fonts:
-         - asset: assets/fonts/clan_ot_narrowmedium.otf
-     - family: narrownews
-       fonts:
-         - asset: assets/fonts/clan_ot_narrownews.otf
-     - family: narrowthin
-       fonts:
-         - asset: assets/fonts/clan_ot_narrowthin.otf
-     - family: narrowultra
-       fonts:
-         - asset: assets/fonts/clan_ot_narrowultra.otf
+    - family: narrowblack
+      fonts:
+        - asset: assets/fonts/clan_ot_narrowblack.otf
+    - family: narrowbold
+      fonts:
+        - asset: assets/fonts/clan_ot_narrowbold.otf
+    - family: narrowbook
+      fonts:
+        - asset: assets/fonts/clan_ot_narrowbook.otf
+    - family: narrowmedium
+      fonts:
+        - asset: assets/fonts/clan_ot_narrowmedium.otf
+    - family: narrownews
+      fonts:
+        - asset: assets/fonts/clan_ot_narrownews.otf
+    - family: narrowthin
+      fonts:
+        - asset: assets/fonts/clan_ot_narrowthin.otf
+    - family: narrowultra
+      fonts:
+        - asset: assets/fonts/clan_ot_narrowultra.otf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

@@ -126,23 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     //Center Widget
-                    Positioned(
-                      top: 0,
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Log In",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontFamily: 'narrowmedium',
-                          ),
-                        ),
-                      ),
-                    ),
+                
                   ],
                 ),
               ),
@@ -405,68 +389,68 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             //Or Continue
-                            Container(
-                              padding: EdgeInsets.symmetric(vertical: 5),
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Or continue with",
-                                style: TextStyle(
-                                  color: Color(0xFF787878),
-                                  fontSize: 12,
-                                  fontFamily: 'narrowmedium',
-                                ),
-                              ),
-                            ),
+                            // Container(
+                            //   padding: EdgeInsets.symmetric(vertical: 5),
+                            //   alignment: Alignment.center,
+                            //   child: Text(
+                            //     "Or continue with",
+                            //     style: TextStyle(
+                            //       color: Color(0xFF787878),
+                            //       fontSize: 12,
+                            //       fontFamily: 'narrowmedium',
+                            //     ),
+                            //   ),
+                            // ),
                             //Login with Google
-                            Container(
-                                padding: EdgeInsets.symmetric(vertical: 13),
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    MaterialButton(
-                                        height: 44,
-                                        onPressed: signInWithGoogle,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(2)),
-                                        color: Color(0xFFdb4437),
-                                        elevation: 0,
-                                        highlightElevation: 0,
-                                        splashColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        child: Container(
-                                          height: 44,
-                                          child: Stack(
-                                            fit: StackFit.expand,
-                                            // overflow: Overflow.visible,
-                                            children: [
-                                              Positioned(
-                                                  left: 23,
-                                                  bottom: 0,
-                                                  top: 0,
-                                                  child: SvgPicture.asset(
-                                                    "assets/svgIcons/ic_google.svg",
-                                                    width: 22,
-                                                    color: Colors.white,
-                                                  )),
-                                              Positioned(
-                                                left: 0,
-                                                right: 0,
-                                                top: 0,
-                                                bottom: 0,
-                                                child: Container(
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    "Connect with Google",
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 13,
-                                                        fontFamily:
-                                                            'narrowmedium'),
-                                                  ),
-                                                ),
-                                              ),
+                            // Container(
+                            //     padding: EdgeInsets.symmetric(vertical: 13),
+                            //     child: Column(
+                            //       crossAxisAlignment:
+                            //           CrossAxisAlignment.stretch,
+                            //       children: [
+                            //         MaterialButton(
+                            //             height: 44,
+                            //             onPressed: signInWithGoogle,
+                            //             shape: RoundedRectangleBorder(
+                            //                 borderRadius:
+                            //                     BorderRadius.circular(2)),
+                            //             color: Color(0xFFdb4437),
+                            //             elevation: 0,
+                            //             highlightElevation: 0,
+                            //             splashColor: Colors.transparent,
+                            //             highlightColor: Colors.transparent,
+                            //             child: Container(
+                            //               height: 44,
+                            //               child: Stack(
+                            //                 fit: StackFit.expand,
+                            //                 // overflow: Overflow.visible,
+                            //                 children: [
+                            //                   Positioned(
+                            //                       left: 23,
+                            //                       bottom: 0,
+                            //                       top: 0,
+                            //                       child: SvgPicture.asset(
+                            //                         "assets/svgIcons/ic_google.svg",
+                            //                         width: 22,
+                            //                         color: Colors.white,
+                            //                       )),
+                                              // Positioned(
+                                              //   left: 0,
+                                              //   right: 0,
+                                              //   top: 0,
+                                              //   bottom: 0,
+                                              //   child: Container(
+                                              //     alignment: Alignment.center,
+                                              //     child: Text(
+                                              //       "Connect with Google",
+                                              //       style: TextStyle(
+                                              //           color: Colors.white,
+                                              //           fontSize: 13,
+                                              //           fontFamily:
+                                              //               'narrowmedium'),
+                                              //     ),
+                                              //   ),
+                                              // ),
                                             ],
                                           ),
                                         ))
@@ -477,54 +461,38 @@ class _LoginScreenState extends State<LoginScreen> {
                                 padding: EdgeInsets.only(top: 4),
                                 child: Row(
                                   children: [
-                                    Expanded(
-                                      child: MaterialButton(
-                                          height: 44,
-                                          onPressed: _loginWithFB,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(2)),
-                                          color: Color(0xFF3b5998),
-                                          elevation: 0,
-                                          highlightElevation: 0,
-                                          splashColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          child: Container(
-                                            height: 44,
-                                            child: Stack(
-                                              fit: StackFit.expand,
-                                              // overflow: Overflow.visible,
-                                              children: [
-                                                Positioned(
-                                                    left: 18,
-                                                    bottom: 0,
-                                                    top: 0,
-                                                    child: SvgPicture.asset(
-                                                      "assets/svgIcons/ic_facebook.svg",
-                                                      width: 22,
-                                                      color: Colors.white,
-                                                    )),
-                                                Positioned(
-                                                  left: 0,
-                                                  right: 0,
-                                                  top: 0,
-                                                  bottom: 0,
-                                                  child: Container(
-                                                    alignment: Alignment.center,
-                                                    child: Text(
-                                                      "Connect with Facebook",
-                                                      style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 13,
-                                                          fontFamily:
-                                                              'narrowmedium'),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          )),
-                                    )
+                                    // Expanded(
+                                    //   child: MaterialButton(
+                                    //       height: 44,
+                                    //       onPressed: _loginWithFB,
+                                    //       shape: RoundedRectangleBorder(
+                                    //           borderRadius:
+                                    //               BorderRadius.circular(2)),
+                                    //       color: Color(0xFF3b5998),
+                                    //       elevation: 0,
+                                    //       highlightElevation: 0,
+                                    //       splashColor: Colors.transparent,
+                                    //       highlightColor: Colors.transparent,
+                                    //       child: Container(
+                                    //         height: 44,
+                                    //         child: Stack(
+                                    //           fit: StackFit.expand,
+                                    //           // overflow: Overflow.visible,
+                                    //           children: [
+                                    //             Positioned(
+                                    //                 left: 18,
+                                    //                 bottom: 0,
+                                    //                 top: 0,
+                                    //                 child: SvgPicture.asset(
+                                    //                   "assets/svgIcons/ic_facebook.svg",
+                                    //                   width: 22,
+                                    //                   color: Colors.white,
+                                    //                 )),
+                                      
+                                    //           ],
+                                    //         ),
+                                    //       )),
+                                    // )
                                   ],
                                 )),
                             //Don't have account? Signup
@@ -572,14 +540,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                  ],
                 ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ));
+              );
+        
   }
 
   //ForgotPassword Route
