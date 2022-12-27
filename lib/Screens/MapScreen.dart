@@ -4,9 +4,9 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_delivery/Screens/showmap_screen.dart';
 import 'package:go_delivery/utils/string.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:location/location.dart';
 import 'DeliveryDetailsScreen.dart';
@@ -269,31 +269,9 @@ class _MapScreenState extends State<MapScreen>with SingleTickerProviderStateMixi
           ),
           //Map pickupIcon
           GestureDetector(
-            onTap: () async {
-              Location location = new Location();
-
-bool _serviceEnabled;
-PermissionStatus _permissionGranted;
-LocationData _locationData;
-
-_serviceEnabled = await location.serviceEnabled();
-if (!_serviceEnabled) {
-  _serviceEnabled = await location.requestService();
-  if (!_serviceEnabled) {
-    return;
-  }
-}
-
-_permissionGranted = await location.hasPermission();
-if (_permissionGranted == PermissionStatus.denied) {
-  _permissionGranted = await location.requestPermission();
-  if (_permissionGranted != PermissionStatus.granted) {
-    return;
-  }
-}
-
-_locationData = await location.getLocation();
-            },
+          onTap: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ShowMapScreen(),));
+          },
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
@@ -587,18 +565,23 @@ _locationData = await location.getLocation();
           ),
 
           //Map dropoffIcon
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Visibility(
-                  visible: dropoffIcon,
-                  child: Image.asset("assets/Icons/ic_location_dropoff.png",scale: 4.5,),
-                ),
-              ],
+          InkWell(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ShowMapScreen(),));
+            },
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Visibility(
+                    visible: dropoffIcon,
+                    child: Image.asset("assets/Icons/ic_location_dropoff.png",scale: 4.5,),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -885,7 +868,8 @@ _locationData = await location.getLocation();
           //   height: 28,
           // ),
           //Map
-          googleMap(context),
+          // googleMap(context),
+          ShowMapScreen(),
           Visibility(
               visible: pickup,
               child: pickupScreen()

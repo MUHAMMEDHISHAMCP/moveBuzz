@@ -32,10 +32,23 @@ dependencies:
   http: ^0.12.2
   image_picker: null
   intl: null
-  location: ^3.0.2
+  # location: ^3.0.2
   provider: null
   shared_preferences: ^2.0.15
   url_launcher: ^5.7.6
+  flutter_map: any
+  geocoder: ^0.2.1
+  tuple: ^1.0.2
+  latlong: ^0.6.1
+  positioned_tap_detector_2: ^1.0.0
+  async: ^2.1.0
+  vector_math: ^2.0.0
+  proj4dart: ^1.0.4
+  meta: ^1.1.0
+  collection: ^1.14.0
+  transparent_image: ^1.0.0
+  flutter_image: ^3.0.0
+
 
 dev_dependencies:
   flutter_launcher_icons: "^0.8.0"
